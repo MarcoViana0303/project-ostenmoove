@@ -14,8 +14,16 @@ const getById = async (id) => {
 
 // Criando uma nova ferramenta
 const createTool = async (data) => {
-    const newTool = await ToolModel.create(data)
-    return newTool;
+    try {
+        if (!data.nome || !data.descricao || !data.status) {
+            throw new Error('Campos obrigatórios ausentes.');
+        }
+
+        const newTool = await ToolModel.create(data);
+        return newTool;
+    } catch (err) {
+        throw err;
+    }
 };
 
 // Deletando uma ferramenta por id
@@ -28,6 +36,7 @@ const deleteById = async (id) => {
     return deletedTool;
 };
 
+// Atualizar status da ferramenta
 const updateToolStatus = async (id, status) => {
     try {
         const tool = await ToolModel.findByPk(id);
@@ -63,7 +72,7 @@ const reserveTool = async (id, mechanicName) => {
         await tool.save();
 
         return tool;
-        
+
     } catch (err) {
         throw err
     }
@@ -74,4 +83,6 @@ module.exports = {
     getById, 
     createTool, 
     deleteById, 
-    updateToolStatus };
+    updateToolStatus,
+    reserveTool,
+ };

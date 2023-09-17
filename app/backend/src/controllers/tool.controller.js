@@ -1,4 +1,4 @@
-const { getAllTools, getById, createTool, deleteById } = require('../services/tool.service');
+const { getAllTools, getById, createTool, deleteById, reserveTool, updateToolStatus } = require('../services/tool.service');
 
 const listAllTools = async (_req, res) => {
     try {
@@ -48,4 +48,36 @@ const deleteToolById = async (req, res) => {
     };
 };
 
-module.exports = { listAllTools, listToolById, createNewTool, deleteToolById };
+const updateToolsStatus = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const { status } = req.body;
+
+        const updateTool = await updateToolStatus(id, status);
+        res.status(200).json(updateTool);
+
+    } catch (err) {
+        res.status(500).json({ err: err.message });
+    };
+};
+
+const reserveTools = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const { mecanico_reservou } = req.body;
+
+        const reservedTool = await reserveTool(id, mecanico_reservou);
+        res.status(200).json(reservedTool);
+    } catch (err) {
+        res.status(500).json({ err: err.message });
+    };
+};
+
+module.exports = { 
+    listAllTools, 
+    listToolById, 
+    createNewTool, 
+    deleteToolById, 
+    reserveTools,
+    updateToolsStatus,
+};
