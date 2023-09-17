@@ -9,7 +9,7 @@ const listAllTools = async (req, res) => {
     };
 };
 
-const getToolById = async (req, res) => {
+const listToolById = async (req, res) => {
     const { id } = req.params;
     try {
         const tool = await getById(id);
@@ -47,3 +47,5 @@ const deleteToolById = async (req, res) => {
         res.status(500).json({ err: 'Erro ao excluir a ferramenta por id.'})
     };
 };
+
+export { listAllTools, listToolById, createNewTool, deleteToolById };
