@@ -12,4 +12,4 @@ router.get('/tools/:id', listToolById);
 router.post('/tools', createNewTool);
 router.delete('/tools/:id', deleteToolById);
 
-export default router;
+module.exports = router;

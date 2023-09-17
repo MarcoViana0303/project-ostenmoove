@@ -28,4 +28,4 @@ const deleteById = async (id) => {
     return deletedTool;
 };
 
-export { getAllTools, getById, createTool, deleteById};
+module.exports = { getAllTools, getById, createTool, deleteById};

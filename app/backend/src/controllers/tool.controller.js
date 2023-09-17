@@ -48,4 +48,4 @@ const deleteToolById = async (req, res) => {
     };
 };
 
-export { listAllTools, listToolById, createNewTool, deleteToolById };
+module.exports = { listAllTools, listToolById, createNewTool, deleteToolById };
