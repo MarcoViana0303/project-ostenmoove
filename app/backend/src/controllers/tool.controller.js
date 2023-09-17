@@ -1,6 +1,6 @@
 const { getAllTools, getById, createTool, deleteById } = require('../services/tool.service');
 
-const listAllTools = async (req, res) => {
+const listAllTools = async (_req, res) => {
     try {
         const tools = await getAllTools();
         res.status(200).json(tools);

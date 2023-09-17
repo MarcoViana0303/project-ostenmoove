@@ -28,4 +28,50 @@ const deleteById = async (id) => {
     return deletedTool;
 };
 
-module.exports = { getAllTools, getById, createTool, deleteById};
+const updateToolStatus = async (id, status) => {
+    try {
+        const tool = await ToolModel.findByPk(id);
+
+        if (!tool) {
+            throw new Error('Ferramenta não encontrada');
+        }
+
+        tool.status = status;
+        await tool.save();
+
+        return tool;
+    } catch (err) {
+        throw err;
+    };
+};
+
+// Reservar uma ferramenta para um mecânico por ID
+const reserveTool = async (id, mechanicName) => {
+    try {
+        const tool = await ToolModel.findByPk(id);
+
+        if (!tool) {
+            throw new Error('Ferramenta não encontrada');
+        };
+        
+        if (tool.status !== "Disponível") {
+            throw new Error('Ferramenta já reservada ou em uso');
+        }
+
+        tool.status = "Reservado";
+        tool.mecanico_reservou = mechanicName;
+        await tool.save();
+
+        return tool;
+        
+    } catch (err) {
+        throw err
+    }
+};
+
+module.exports = { 
+    getAllTools, 
+    getById, 
+    createTool, 
+    deleteById, 
+    updateToolStatus };
