@@ -25,6 +25,7 @@ const listToolById = async (req, res) => {
 };
 
 const createNewTool = async (req, res) => {
+    console.log(req.body);
     const toolData = req.body;
     try {
         const newTool = await createTool(toolData);

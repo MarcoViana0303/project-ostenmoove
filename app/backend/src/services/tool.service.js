@@ -18,7 +18,7 @@ const createTool = async (data) => {
         if (!data.nome || !data.descricao || !data.status) {
             throw new Error('Campos obrigatórios ausentes.');
         }
-
+        
         const newTool = await ToolModel.create(data);
         return newTool;
     } catch (err) {
