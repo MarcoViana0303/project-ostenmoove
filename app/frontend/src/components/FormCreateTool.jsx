@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 
 export default function FormCreateTool() {
@@ -23,7 +23,7 @@ export default function FormCreateTool() {
         e.preventDefault();
 
         axios.post('http://localhost:3000/tools', formData)
-            .then((res) => {
+            .then((_res) => {
                 window.alert('Ferramenta cadastrada com sucesso.');
             })
             .catch((err) => {
@@ -63,9 +63,8 @@ export default function FormCreateTool() {
 
                     <button type="submit">Adicionar Ferramenta</button>
                 </form>
-
             </div>
         </>
     )
-};
+}
 

@@ -1,12 +1,12 @@
 const express = require('express');
 const router = express.Router();
 const {
-    listAllTools, 
-    listToolById, 
-    createNewTool, 
-    deleteToolById,
-    updateToolsStatus,
-    reserveTools,
+  listAllTools,
+  listToolById,
+  createNewTool,
+  deleteToolById,
+  updateToolsStatus,
+  reserveTools,
 } = require('../controllers/tool.controller');
 
 router.get('/tools', listAllTools);

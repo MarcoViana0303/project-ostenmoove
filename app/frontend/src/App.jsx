@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import ToolsCard from './components/ToolsCard'
 import './App.css'
 

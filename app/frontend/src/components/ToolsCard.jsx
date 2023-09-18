@@ -28,7 +28,7 @@ function ToolsCard() {
       .catch((err) => {
         console.log(err);
       })
-    };
+    }
   };
 
   const handleClickAdd = () => {
