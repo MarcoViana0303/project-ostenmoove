@@ -1,13 +1,13 @@
 const {getAllTools, getById,
   createTool, deleteById,
-  reserveTool, updateToolStatus} = require('../services/tool.service');
+  reserveTool, updateToolStatus} = require("../services/tool.service");
 
 const listAllTools = async (_req, res) => {
   try {
     const tools = await getAllTools();
     res.status(200).json(tools);
   } catch (err) {
-    res.status(500).json({err: 'Erro ao listar ferramentas.'});
+    res.status(500).json({err: "Erro ao listar ferramentas."});
   };
 };
 
@@ -18,10 +18,10 @@ const listToolById = async (req, res) => {
     if (tool) {
       res.status(200).json(tool);
     } else {
-      res.status(404).json({message: 'Ferramenta não encontrada.'});
+      res.status(404).json({message: "Ferramenta não encontrada."});
     }
   } catch (err) {
-    res.status(500).json({err: 'Erro ao buscar ferramenta por id.'});
+    res.status(500).json({err: "Erro ao buscar ferramenta por id."});
   }
 };
 
@@ -32,7 +32,7 @@ const createNewTool = async (req, res) => {
     const newTool = await createTool(toolData);
     res.status(201).json(newTool);
   } catch (err) {
-    res.status(500).json({err: 'Erro ao criar uma nova ferramenta.'});
+    res.status(500).json({err: "Erro ao criar uma nova ferramenta."});
   }
 };
 
@@ -44,11 +44,11 @@ const deleteToolById = async (req, res) => {
       res.status(204).end();
     } else {
       res.status(404).json({
-        message: 'Ferramenta não encontrada para exclusão.',
+        message: "Ferramenta não encontrada para exclusão.",
       });
     }
   } catch (err) {
-    res.status(500).json({err: 'Erro ao excluir a ferramenta por id.'});
+    res.status(500).json({err: "Erro ao excluir a ferramenta por id."});
   };
 };
 

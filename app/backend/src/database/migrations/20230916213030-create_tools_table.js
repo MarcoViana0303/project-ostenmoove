@@ -1,9 +1,9 @@
-'use strict';
+"use strict";
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('tools', {
+    await queryInterface.createTable("tools", {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -20,8 +20,8 @@ module.exports = {
       },
       status: {
         allowNull: false,
-        type: Sequelize.ENUM('Disponível', 'Reservado', 'Em Uso'),
-        defaultValue: 'Disponível',
+        type: Sequelize.ENUM("Disponível", "Reservado", "Em Uso"),
+        defaultValue: "Disponível",
       },
       data_coleta: {
         type: Sequelize.DATE,
@@ -45,6 +45,6 @@ module.exports = {
 
 
   async down(queryInterface, _Sequelize) {
-    await queryInterface.dropTable('tools');
+    await queryInterface.dropTable("tools");
   },
 };

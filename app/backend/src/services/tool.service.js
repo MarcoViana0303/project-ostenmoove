@@ -1,4 +1,4 @@
-const ToolModel = require('../database/models/ToolModel');
+const ToolModel = require("../database/models/ToolModel");
 
 // Listando todas as ferramentas
 const getAllTools = async () => {
@@ -16,7 +16,7 @@ const getById = async (id) => {
 const createTool = async (data) => {
   try {
     if (!data.nome || !data.descricao || !data.status) {
-      throw new Error('Campos obrigatórios ausentes.');
+      throw new Error("Campos obrigatórios ausentes.");
     }
 
     const newTool = await ToolModel.create(data);
@@ -42,7 +42,7 @@ const updateToolStatus = async (id, status) => {
     const tool = await ToolModel.findByPk(id);
 
     if (!tool) {
-      throw new Error('Ferramenta não encontrada');
+      throw new Error("Ferramenta não encontrada");
     }
 
     tool.status = status;
@@ -60,14 +60,14 @@ const reserveTool = async (id, mechanicName) => {
     const tool = await ToolModel.findByPk(id);
 
     if (!tool) {
-      throw new Error('Ferramenta não encontrada');
+      throw new Error("Ferramenta não encontrada");
     };
 
-    if (tool.status !== 'Disponível') {
-      throw new Error('Ferramenta já reservada ou em uso');
+    if (tool.status !== "Disponível") {
+      throw new Error("Ferramenta já reservada ou em uso");
     }
 
-    tool.status = 'Reservado';
+    tool.status = "Reservado";
     tool.mecanico_reservou = mechanicName;
     await tool.save();
 
