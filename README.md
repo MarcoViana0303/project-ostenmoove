@@ -43,13 +43,13 @@ Para a interface do usuário, foi desenvolvido um front-end intuitivo que permit
 Clone o projeto
 
 ```bash
-  git clone git@github.com:MarcoViana0303/project-ostenmoove.git
+git clone git@github.com:MarcoViana0303/project-ostenmoove.git
 ```
 
 Entre no diretório do projeto
 
 ```bash
-  cd project-ostenmoove
+cd project-ostenmoove
 ```
 
 <br /> 
@@ -59,7 +59,7 @@ Entre no diretório do projeto
 Instale as dependências (caso existam)
 
 ```bash
-  npm install
+npm install
 ```
 
 ## Back-end
@@ -67,19 +67,19 @@ Instale as dependências (caso existam)
 Entre no diretório app e em seguida no diretório backend
 
 ```bash
-  cd app && cd backend
+cd app && cd backend
 ```
 
 Instale as dependências (caso existam)
 
 ```bash
-  npm install
+npm install
 ```
 
 Rode a aplicação
 
 ```bash
-  npm run dev
+npm run dev
 ```
 
 ## Front-end
@@ -87,19 +87,19 @@ Rode a aplicação
 Entre no diretório app e em seguida no diretório frontend
 
 ```bash
-  cd app && cd frontend
+cd app && cd frontend
 ```
 
 Instale as dependências (caso existam)
 
 ```bash
-  npm install
+npm install
 ```
 
 Rode a aplicação no navegador
 
 ```bash
-  npm run dev
+npm run dev
 ```
 
 ## 🔗 Links
