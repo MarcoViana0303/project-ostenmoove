@@ -3,6 +3,10 @@
   <br /><br />
 </h3>
 
+## Observação
+
+A integração das aplicações de frontend e backend não estão concluídas totalmente, foi desenhado um mock (dados fictícios) para a implementação do CRUD no frontend.
+
 ## Objetivo
 
 O objetivo deste projeto era criar um sistema de reserva de ferramentas destinado a mecânicos, fornecendo uma solução eficaz para o gerenciamento de ferramentas e suas reservas.
