@@ -67,7 +67,7 @@ Instale as dependências (caso existam)
 Entre no diretório app e em seguida no diretório backend
 
 ```bash
-  cd app cd backend
+  cd app && cd backend
 ```
 
 Instale as dependências (caso existam)
@@ -87,7 +87,7 @@ Rode a aplicação
 Entre no diretório app e em seguida no diretório frontend
 
 ```bash
-  cd app cd frontend
+  cd app && cd frontend
 ```
 
 Instale as dependências (caso existam)
