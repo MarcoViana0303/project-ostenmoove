@@ -1,7 +1,7 @@
-<h4 align="center">
+<h3 align="center">
   Sistema de Reserva de Ferramentas - Osten Moove
   <br /><br />
-</h4>
+</h3>
 
 ## Objetivo
 
