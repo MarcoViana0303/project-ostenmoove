@@ -6,6 +6,7 @@ import axios from 'axios';
 function ToolsCard() {
   const [tools, setTools] = useState(mockTools);
   const [isForm, setIsForm] = useState(false);
+  const [editTool, setEditTool] = useState(null);
 
   useEffect(() => {
     axios.get('http://localhost:3000/tools')
@@ -58,6 +59,11 @@ function ToolsCard() {
     }
   };
 
+  const handleClickEdit = (tool) => {
+    setIsForm(true);
+    setEditTool(tool);
+  };
+
   const formatDateBr = (prevFormat) => {
     const data = new Date(prevFormat);
     const options = {
@@ -83,7 +89,7 @@ function ToolsCard() {
               <div>{el.status}</div>
               <div>{formatDateBr(el.data_coleta)}</div>
               <div>{formatDateBr(el.data_devolucao)}</div>
-              <button className='button edit-button'>Editar</button>
+              <button onClick={() => handleClickEdit(el)} className='button edit-button'>Editar</button>
               <button className='button reserve' onClick={() => handleClickReserve(index) } disabled={
                 el.status == 'Reservado' || el.status == 'Em Uso'}>Reservar</button>
               <button className='button delete-button' onClick={() => handleClickDelete(el.id)}>Deletar</button>
