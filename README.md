@@ -35,6 +35,10 @@ Para a interface do usuário, foi desenvolvido um front-end intuitivo que permit
 -  Git
 -  VS Code
 -  Node.js
+-  Express.js
+-  ThunderClient
+-  Nodemon
+-  ESLint
   
   </details>
 
